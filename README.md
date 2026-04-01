@@ -72,6 +72,11 @@ crown     tophat    propeller   halo      wizard    beanie    tinyduck
 
 common, uncommon, rare, epic, legendary
 
+## After running
+
+1. Restart Claude Code
+2. Run `/buddy` to hatch your new companion
+
 ## How it works
 
 Brute-forces a salt that makes the companion RNG land on your chosen species (and the best rarity it can find). Patches the Claude Code binary in place, keeping a `.original` backup. Installs a SessionStart hook so your choice persists across Claude Code updates automatically.
