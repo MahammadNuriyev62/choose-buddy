@@ -23,9 +23,52 @@ node choose-buddy.mjs dragon
 
 ## Species
 
-duck, goose, blob, cat, dragon, octopus, owl, penguin, turtle, snail, ghost, axolotl, capybara, cactus, robot, rabbit, mushroom, chonk
+```
+DUCK              GOOSE             BLOB              CAT
+    __                 (·>            .----.           /\_/\
+  <(· )___             ||            ( ·  · )        ( ·   ·)
+   (  ._>            _(__)_          (      )        (  ω  )
+    `--´              ^^^^            `----´         (")_(")
 
-## Rarities
+DRAGON            OCTOPUS           OWL               PENGUIN
+  /^\  /^\          .----.           /\  /\          .---.
+ <  ·  ·  >        ( ·  · )        ((·)(·))        (·>·)
+ (   ~~   )        (______)        (  ><  )        /(   )\
+  `-vvvv-´         /\/\/\/\         `----´          `---´
+
+TURTLE            SNAIL             GHOST             AXOLOTL
+   _,--._        ·    .--.          .----.        }~(______)~{
+  ( ·  · )        \  ( @ )        / ·  · \       }~(· .. ·)~{
+ /[______]\        \_`--´         |      |         ( .--. )
+  ``    ``        ~~~~~~~         ~`~``~`~         (_/  \_)
+
+CAPYBARA          CACTUS            ROBOT             RABBIT
+  n______n       n  ____  n        .[||].           (\__/)
+ ( ·    · )      | |·  ·| |      [ ·  · ]        ( ·  · )
+ (   oo   )      |_|    |_|      [ ==== ]        =(  ..  )=
+  `------´         |    |         `------´        (")__(" )
+
+MUSHROOM          CHONK
+ .-o-OO-o-.       /\    /\
+(__________)     ( ·    · )
+   |·  ·|        (   ..   )
+   |____|         `------´
+```
+
+### Eyes
+
+Each companion gets a random eye style: `·` `✦` `×` `◉` `@` `°`
+
+### Hats
+
+Non-common companions can wear hats:
+
+```
+crown     tophat    propeller   halo      wizard    beanie    tinyduck
+\^^^/     [___]       -+-      (   )      /^\       (___)       ,>
+```
+
+### Rarities
 
 common, uncommon, rare, epic, legendary
 
