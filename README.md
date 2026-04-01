@@ -1,6 +1,6 @@
 # choose-buddy
 
-Pick your Claude Code companion species.
+Got a bullshit common pet while others got rare ones? Forget luck. Pick your own.
 
 Works with Node.js 16+ or Bun. No dependencies.
 
