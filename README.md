@@ -9,6 +9,7 @@ Works with Node.js 16+ or Bun. No dependencies.
 ```bash
 node choose-buddy.mjs <species>                     # Pick a species (finds best rarity)
 node choose-buddy.mjs <species> --rarity <rarity>   # Pick species + exact rarity
+node choose-buddy.mjs <species> --persist            # Pick + auto-repatch on updates
 node choose-buddy.mjs --list                         # List all species
 node choose-buddy.mjs --info                         # Show your current companion
 node choose-buddy.mjs --restore                      # Undo everything
@@ -79,6 +80,8 @@ common, uncommon, rare, epic, legendary
 
 ## How it works
 
-Brute-forces a salt that makes the companion RNG land on your chosen species (and the best rarity it can find). Patches the Claude Code binary in place, keeping a `.original` backup. Installs a SessionStart hook so your choice persists across Claude Code updates automatically.
+Brute-forces a salt that makes the companion RNG land on your chosen species (and the best rarity it can find). Patches the Claude Code binary in place, keeping a `.original` backup.
+
+With `--persist`, it installs a SessionStart hook in `~/.claude/settings.json` so your choice is automatically re-applied when Claude Code updates.
 
 Use `--restore` to undo everything.

@@ -5,6 +5,7 @@
 // Usage:
 //   node choose-buddy.mjs <species>                     Pick a species (finds best rarity)
 //   node choose-buddy.mjs <species> --rarity <rarity>   Pick species + rarity
+//   node choose-buddy.mjs <species> --persist           Pick + auto-repatch on updates
 //   node choose-buddy.mjs --list                        List all species
 //   node choose-buddy.mjs --info                        Show your current companion
 //   node choose-buddy.mjs --restore                     Restore original binary
@@ -395,11 +396,10 @@ choose-buddy — pick your Claude Code companion species
 Usage:
   node choose-buddy.mjs <species>                     Pick a species
   node choose-buddy.mjs <species> --rarity <rarity>   Pick species + exact rarity
+  node choose-buddy.mjs <species> --persist            Pick + auto-repatch on updates
   node choose-buddy.mjs --list                        List all species
   node choose-buddy.mjs --info                        Show current companion
   node choose-buddy.mjs --restore                     Undo everything
-
-Persists across updates automatically.
 
 Species: ${SPECIES.join(", ")}
 Rarities: ${RARITIES.join(", ")}
@@ -515,14 +515,20 @@ try {
 
   const scriptPath = realpathSync(process.argv[1]);
   saveChoice(targetSpecies, targetRarity, scriptPath);
-  installHook(scriptPath);
+
+  if (args.includes("--persist")) {
+    installHook(scriptPath);
+    console.log("SessionStart hook installed. Your choice will persist across Claude Code updates.");
+  }
 
   delete config.companion;
   writeConfig(config);
 
   console.log();
-  console.log("Done! Restart Claude Code to meet your new companion.");
-  console.log("Persists across updates automatically (via SessionStart hook).");
+  console.log("Done! Restart Claude Code and run /buddy to meet your new companion.");
+  if (!args.includes("--persist")) {
+    console.log("Tip: re-run with --persist to survive Claude Code updates automatically.");
+  }
   console.log("Run with --restore to undo everything.");
 } catch (e) {
   console.error(`Failed: ${e.message}`);
